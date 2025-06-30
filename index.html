@@ -1,41 +1,72 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>practica 1
-    </title>
-    <link rel="stylesheet" href="../css/css.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rotafolio - Alan Kenneth Escobar</title>
+  <style>
+    body { font-family: 'Segoe UI', sans-serif; margin: 0; background: #e8f0fe; }
+    .container { max-width: 700px; margin: 50px auto; background: #fff; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); overflow: hidden; }
+    .slide { display: none; padding: 40px; text-align: center; }
+    .slide.active { display: block; }
+    h2 { color: #2b6cb0; }
+    .btns { display: flex; justify-content: center; gap: 15px; padding: 20px; }
+    .btn { background: #2b6cb0; color: #fff; padding: 12px 24px; border: none; border-radius: 8px; cursor: pointer; transition: 0.3s; }
+    .btn:hover { background: #1a4f8b; }
+  </style>
 </head>
-
 <body>
-    <div class="textonombre"><h2 style="font-family: Bebas Neue; font-size: 700% ; margin-top: 1px; line-height: 100px; letter-spacing: 2px; ">Lionel Andres <br> Messi Cuccittini</h2></div>
-    
-    <div class="textoposision">
-        
-        <div class="textofrese"><h3 style="font-family: Bebas Neue; font-size: 700% ; margin-top: -290px; line-height: 100px; letter-spacing: 2px; text-align: right;">!!Que miras <br>Bobo, <br> anda anda <br> pa hasha <br> bobo!!</h3></div>
-    </div>
 
-    <div class="balonesdeoro" style="margin-top: -400px;">
-        <img src="../img/676.png" alt="" style="width: 150px;">
-    <img src="../img/676.png" alt="" style="width: 150px;"><br>
-    <img src="../img/676.png" alt="" style="width: 150px;">
-    <img src="../img/676.png" alt="" style="width: 150px;"><br>
-    <img src="../img/676.png" alt="" style="width: 150px;">
-    <img src="../img/676.png" alt="" style="width: 150px;"><br>
-    <img src="../img/676.png" alt="" style="width: 150px;">
-    <img src="../img/676.png" alt="" style="width: 150px;">
+<div class="container">
+  <div class="slide active">
+    <h2>👋 ¡Hola!</h2>
+    <p>Soy <strong>Alan Kenneth Escobar Salas</strong></p>
+    <p>Bienvenido a mi presentación personal</p>
+  </div>
+  <div class="slide">
+    <h2>📚 Formación</h2>
+    <p>Estudio en el <strong>Colegio Don Bosco</strong></p>
+    <p>Desde parvularia hasta bachiller general</p>
+  </div>
+  <div class="slide">
+    <h2>💻 Profesión</h2>
+    <p>Soy <strong>Desarrollador de software</strong></p>
+    <p>Me encanta crear páginas web y soluciones tecnológicas</p>
+  </div>
+  <div class="slide">
+    <h2>⚽ Pasatiempos</h2>
+    <p>Me gusta jugar fútbol y desarrollar sitios web creativos</p>
+  </div>
+  <div class="slide">
+    <h2>📍 Ubicación</h2>
+    <p>Vivo en Popa, San Salvador</p>
+  </div>
+  <div class="slide">
+    <h2>🎂 Sobre mí</h2>
+    <p>Tengo 18 años</p>
+    <p>Nací el 5 de agosto de 2006</p>
+  </div>
+  <div class="slide">
+    <h2>🚀 ¡Gracias!</h2>
+    <p>Este es solo el comienzo. El futuro está lleno de posibilidades</p>
+  </div>
 
-    </div>
+  <div class="btns">
+    <button class="btn" onclick="changeSlide(-1)">⬅ Anterior</button>
+    <button class="btn" onclick="changeSlide(1)">Siguiente ➡</button>
+  </div>
+</div>
 
-    
-   
-    
-    <a href="../html/pagina2.html"><img src="" alt=""></a>
+<script>
+  const slides = document.querySelectorAll('.slide');
+  let current = 0;
+
+  function changeSlide(dir) {
+    slides[current].classList.remove('active');
+    current = (current + dir + slides.length) % slides.length;
+    slides[current].classList.add('active');
+  }
+</script>
+
 </body>
-
 </html>
